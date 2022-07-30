@@ -13,7 +13,6 @@ const SearchAuthor = () => {
   const handleSearch = async (evt: React.FormEvent) => {
     evt.preventDefault();
 
-    // TODO: perform validation
     let errors = validateId();
 
     if (errors) {
@@ -40,6 +39,9 @@ const SearchAuthor = () => {
     }
   };
 
+  /**
+   * Performs validation on the Author Id before it is fetched.
+   */
   const validateId = (): string => {
     if (!authorId) return 'Enter an author ID!';
     if (!authorId.toUpperCase().startsWith('A'))
